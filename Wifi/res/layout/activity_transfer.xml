@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:background="@android:color/black"
+                android:alpha="0.7"
+                tools:context=".FileTransferActivity">
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_centerInParent="true"
+                  android:background="#ededed"
+                  android:padding="3dp"
+                  android:orientation="vertical">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:text="대상 단말 : "></TextView>
+            <TextView
+                    android:id="@+id/txt_device"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textSize="16dp"
+                    android:gravity="center_vertical"
+                    android:text="단말 명 "></TextView>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:textSize="14dp"
+                    android:layout_alignParentLeft="true"
+                    android:text="파일 : "></TextView>
+            <RelativeLayout
+                    android:id="@+id/ll_file_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                <TextView
+                        android:id="@+id/txt_path"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginLeft="3dp"
+                        android:background="@android:color/darker_gray"
+                        android:textColor="#000000"
+                        android:singleLine="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/btn_find"/>
+                <Button
+                        android:id="@+id/btn_find"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:includeFontPadding="false"
+                        android:textSize="14dp"
+                        android:text="파일찾기"
+                        android:layout_alignParentRight="true"
+                        />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal"
+                >
+            <Button
+                    android:id="@+id/btn_start_transfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="전송하기"
+                    />
+            <RelativeLayout
+                    android:id="@+id/ll_transfer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+                <ProgressBar android:id="@+id/progress"
+                             android:layout_width="match_parent"
+                             android:layout_height="30dp"
+                             android:layout_centerVertical="true"
+                             android:progressDrawable="@android:drawable/progress_horizontal"
+                             style="?android:progressBarStyleHorizontal"
+                             android:layout_toLeftOf="@+id/btn_stop_transfer"/>
+
+                <Button
+                        android:id="@+id/btn_stop_transfer"
+                        android:layout_width="50dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true"
+                        android:text="전송중지"
+                        />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
